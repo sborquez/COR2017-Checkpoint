@@ -1,7 +1,9 @@
 CXX := g++
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/Checkpoint
+TARGETDIR := bin
+APPNAME := Checkpoint
+TARGET := $(TARGETDIR)/$(APPNAME)
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
@@ -19,7 +21,8 @@ override CFLAGS += $(SDL_CFLAGS)
 override LIBS += $(SDL_LDFLAGS)
 
 $(TARGET): $(OBJECTS)
-	@echo " Linking..."
+	@echo " Linking... $(APPNAME)" 
+	@mkdir -p $(TARGETDIR)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
