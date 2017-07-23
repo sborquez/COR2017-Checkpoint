@@ -1,0 +1,7 @@
+# Ignore the build and lib dirs
+Checkpoint/build/*
+Checkpoint/lib/*
+
+# Ignora executables
+Checkpoint/bin/*
+
