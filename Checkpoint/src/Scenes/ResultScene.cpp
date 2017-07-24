@@ -24,7 +24,7 @@ void ResultScene::render()
 
 bool ResultScene::onEnter()
 {
-    TheApplication->getTextureManager()->load("../../data/assets/Velocidad-bases.jpg","Velocidad-bases");
+    TheApplication->getTextureManager()->load("assets/Velocidad-bases.jpg","Velocidad-bases");
     return BaseScene::onEnter();
 }
 

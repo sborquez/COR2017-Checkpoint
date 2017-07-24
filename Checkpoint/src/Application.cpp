@@ -42,12 +42,22 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     // Inicio exitoso   
     SDL_Log("SDL inicio exitoso");    
     
-    // Iniciando variables
-    // comenzar bucle principal, la aplicacion esta corriendo
-    m_bRunning = true;
 
+
+    // Iniciando variables
+    
+    SDL_Log("Iniciando gestores ...");    
     // TextureManager
     m_pTextureManager = new TextureManager;
+    // Carpeta data encontrada
+    if (m_pTextureManager->getDataFolder() != "" ) {
+        SDL_Log("\tGestor de texturas iniciado correctamente");
+        SDL_Log("\t\tData => %s", m_pTextureManager->getDataFolder().c_str());
+    } else {
+        SDL_Log("\tNo se pudo inicar gestor de texturas");
+        SDL_Log("\t\tData => NO ENCONTRADA");
+        return false;
+    }
 
     // Input Handler
     /*
@@ -63,6 +73,9 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     // Cargar la primera escena
     m_pSceneStateMachine->firstScene();
 
+    // Comenzar bucle principal, la aplicacion esta corriendo
+    m_bRunning = true;
+    
     return true;
 }
 

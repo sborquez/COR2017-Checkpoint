@@ -23,7 +23,7 @@ void StartScene::render()
 
 bool StartScene::onEnter()
 {
-    TheApplication->getTextureManager()->load("../data/assets/banner2.png","banner");
+    TheApplication->getTextureManager()->load("assets/banner2.png","banner");
     return BaseScene::onEnter();
 }
 

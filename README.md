@@ -16,5 +16,5 @@ Chronometer display using raspberry pi and ...
 
 ### Installation
 
-install dependecies (TODO)
-run _setup.sh_ (TODO)
+* install dependecies (TODO)
+* run _setup.sh_ (TODO)

@@ -11,7 +11,7 @@ class TextureManager;
 class TextureManager
 {
 public:
-    TextureManager() {};
+    TextureManager();
     ~TextureManager() 
     { 
       freeTextureMap(); 
@@ -44,9 +44,12 @@ public:
                    int height, int currentRow, int currentFrame,
                    SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
     
+    std::string getDataFolder() const { return dataFolder; } 
+
     void freeTextureMap();
 
 private:
     std::map<std::string, SDL_Texture*> m_textureMap;
+    std::string dataFolder;
 };
 #endif

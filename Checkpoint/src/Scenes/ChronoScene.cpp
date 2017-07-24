@@ -23,7 +23,7 @@ void ChronoScene::render()
 
 bool ChronoScene::onEnter()
 {
-    TheApplication->getTextureManager()->load("../../data/assets/logo.png","logo");
+    TheApplication->getTextureManager()->load("assets/logo.png","logo");
     return BaseScene::onEnter();
 }
 

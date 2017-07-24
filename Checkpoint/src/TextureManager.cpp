@@ -1,11 +1,61 @@
 #include <SDL2/SDL_image.h>
+#include <dirent.h>
 
 #include "../include/TextureManager.hpp"
+
+/* Almacenamiento de texturas
+
+TextureManager toma a "data/" como raiz para buscar las texturas, así las
+texturas deben almacenarse en la carpeta "data/", pasando la ruta (fileName)
+respecto a "data/".
+
+Ej:
+
+data/
+    background/
+            special/
+                img1.png
+        img2.png
+    img3.png
+
+Deben ingresarse en el argumento fileName como:
+    img1.png -> "background/Special/img1.png"
+    img2.png -> "background/img2.png"
+    img3.png -> "img3png"
+
+*/
+
+// Constructor
+TextureManager::TextureManager()
+{
+    // Buscar la carpeta data
+    DIR *dir;
+    struct dirent *ent;
+    // Rutas donde buscar
+    std::string roots[] = {"/", "/..", "/../.."};
+
+    for (int i = 0; i < 3; ++i) { 
+        dir = opendir((TheApplication->getDir() + roots[i]).c_str());
+        while((ent = readdir(dir)) != NULL) {
+            if (std::string(ent->d_name) == "data") {
+                dataFolder = TheApplication->getDir();
+                dataFolder += roots[i] + "/data/"; 
+                closedir(dir);
+                return;
+            }
+        }
+        closedir(dir);
+    }
+    // ruta a carpeta data no encontrada
+    dataFolder = "";
+}
+
 
 // Cargar nueva textura
 bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pRenderer)
 {
-    SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
+    std::string filePath = dataFolder + fileName;
+    SDL_Surface* pTempSurface = IMG_Load(filePath.c_str());
 
     if (!pTempSurface){
         SDL_Log("No se pudo cargar %s", fileName.c_str());

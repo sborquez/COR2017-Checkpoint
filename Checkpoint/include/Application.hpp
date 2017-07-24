@@ -7,6 +7,7 @@
 
 
 #include <SDL2/SDL.h>
+#include <string>
 
 #include "TextureManager.hpp"
 #include "SceneStateMachine.hpp"
@@ -51,6 +52,10 @@ public:
     // Input Handler
     inline InputHandler* getInputHandler() const { return m_pInputHandler; }
 
+    // Working directory
+    inline void setDir(std::string dir) { m_sWorkingDir = dir.substr(0,dir.find_last_of("/\\")); }
+    inline std::string getDir() const { return m_sWorkingDir; }
+
     // Singleton instance getter
     static Application* Instance()
     {
@@ -68,7 +73,8 @@ private:
                     m_pInputHandler(NULL),
                     m_pTextureManager(NULL), 
                     m_pSceneStateMachine(NULL), 
-                    m_bRunning(false)
+                    m_bRunning(false),
+                    m_sWorkingDir(".")
     {
 
     }
@@ -93,6 +99,10 @@ private:
 
     // Esta corriendo - flag de bucle principal
     bool m_bRunning;
+
+    // Directorio de binario
+    std::string m_sWorkingDir;
+
 };
 
 #endif

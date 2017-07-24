@@ -36,6 +36,9 @@ int main(int argc, char const *argv[])
     if (fullscreen)
         SDL_Log("Modo Pantalla Completa");
     
+    // Establecer directorio de trabajo
+    TheApplication->setDir(std::string(argv[0]));
+
     // Iniciar applicacion
     if (TheApplication->init("Checkpoint", 0, 0, WIDTH, HEIGHT, fullscreen, gpio)) {
         SDL_Log("Aplicacion iniciada");
@@ -44,6 +47,7 @@ int main(int argc, char const *argv[])
         SDL_Log("Saliendo");   
         return 1;
     }
+
     // Bucle principal
     while (TheApplication->running()) {
         TheApplication->handleEvents();
