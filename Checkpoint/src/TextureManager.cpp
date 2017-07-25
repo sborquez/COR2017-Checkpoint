@@ -18,8 +18,8 @@ data/
         img2.png
     img3.png
 
-Deben ingresarse en el argumento fileName como:
-    img1.png -> "background/Special/img1.png"
+Deben ingresarse el argumento fileName como:
+    img1.png -> "background/special/img1.png"
     img2.png -> "background/img2.png"
     img3.png -> "img3png"
 

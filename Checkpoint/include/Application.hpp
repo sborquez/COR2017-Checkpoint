@@ -14,6 +14,9 @@
 #include "InputHandler.hpp"
 
 #define TheApplication Application::Instance()
+#define TheInputHandler Application::Instance()->getInputHandler()
+#define TheTextureManager Application::Instance()->getTextureManager()
+#define TheSceneManager Application::Instance()->getSceneStateMachine()
 
 class Application {
 public:
@@ -23,14 +26,14 @@ public:
     bool init (const char* title, int xpos, int ypos, int width, 
                int height, bool fullscreen, bool gpio);
     
-    // Dibujar en pantalla
-    void render();
+    // Manipular eventos en la escena actual
+    void handleEvents();
 
     // Actualizar estados de la escena actual
     void update();
 
-    // Manipular eventos en la escena actual
-    void handleEvents();
+    // Dibujar en pantalla
+    void render();
 
     // Liberar memoria
     void clean();

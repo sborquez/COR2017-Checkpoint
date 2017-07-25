@@ -8,6 +8,29 @@ class TextureManager;
 
 #include "Application.hpp"
 
+/* Almacenamiento de texturas
+
+TextureManager toma a "data/" como raiz para buscar las texturas, así las
+texturas deben almacenarse en la carpeta "data/", pasando la ruta (fileName)
+respecto a "data/".
+
+Ej:
+
+data/
+    background/
+            special/
+                img1.png
+        img2.png
+    img3.png
+
+Deben ingresarse el argumento fileName como:
+    img1.png -> "background/special/img1.png"
+    img2.png -> "background/img2.png"
+    img3.png -> "img3png"
+
+*/
+
+
 class TextureManager
 {
 public:

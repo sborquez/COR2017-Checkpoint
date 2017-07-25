@@ -21,7 +21,7 @@ public:
 
     virtual std::string getSceneID() const = 0;
 
-    virtual ~Scene() {};
+    ~Scene() {};
 
 protected:
     Scene(const std::string ID) { };

@@ -8,27 +8,23 @@ void ChronoScene::update()
 
 void ChronoScene::handleEvents()
 {
-    BaseScene::handleEvents();
-    
-    //Test
-    m_keystate = SDL_GetKeyboardState(NULL);
-    if (m_keystate and m_keystate[SDL_SCANCODE_R])
-        TheApplication->getSceneStateMachine()->changeScene(new ResultScene("Resultado"));
+    if (TheInputHandler->onPress(B_RESET))
+        TheSceneManager->changeScene(new ResultScene("Result"));
 }
 
 void ChronoScene::render()
 {
-    TheApplication->getTextureManager()->drawBackground("logo", 0, 0, 0, 0, true);
+    TheTextureManager->drawBackground("logo", 0, 0, 0, 0, true);
 }
 
 bool ChronoScene::onEnter()
 {
-    TheApplication->getTextureManager()->load("assets/logo.png","logo");
+    TheTextureManager->load("assets/logo.png","logo");
     return BaseScene::onEnter();
 }
 
 bool ChronoScene::onExit()
 {
-    TheApplication->getTextureManager()->unload("logo");
+    TheTextureManager->unload("logo");
     return BaseScene::onExit();
 }

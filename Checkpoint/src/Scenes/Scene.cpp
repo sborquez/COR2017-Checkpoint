@@ -8,7 +8,6 @@ void BaseScene::update()
 
 void BaseScene::handleEvents()
 {
-    //asdasd
 }
 
 void BaseScene::render() 

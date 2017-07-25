@@ -79,6 +79,19 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     return true;
 }
 
+void Application::handleEvents()
+{
+    // Manipular eventos
+    m_pInputHandler->update();
+    m_pSceneStateMachine->handleEvents();
+}
+
+void Application::update()
+{
+    // Actualizar escena actual
+    m_pSceneStateMachine->update();
+}
+
 // Dibujar en pantalla
 void Application::render() 
 {
@@ -90,32 +103,6 @@ void Application::render()
 
     // Mostrar en pantalla
     SDL_RenderPresent(m_pRenderer);
-}
-
-void Application::update()
-{
-    // Actualizar escena actual
-    m_pSceneStateMachine->update();
-}
-
-void Application::handleEvents()
-{
-    // Manipular eventos
-    //m_pInputHandler->update();
-
-    //TEST
-    SDL_Event event;
-    while(SDL_PollEvent(&event)) {
-        switch (event.type) { 
-        case SDL_QUIT:
-            quit();
-            break;
-        default:
-            break;    
-        }
-    }
-
-    m_pSceneStateMachine->handleEvents();
 }
 
 // Liberar memoria

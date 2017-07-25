@@ -17,10 +17,6 @@ public:
     bool onExit();
     
     bool onEnter();
-
-private:
-    const Uint8* m_keystate;
-
 };
 
 #endif

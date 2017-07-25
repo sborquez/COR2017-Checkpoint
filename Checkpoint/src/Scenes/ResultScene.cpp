@@ -8,28 +8,23 @@ void ResultScene::update()
 
 void ResultScene::handleEvents()
 {
-    BaseScene::handleEvents();
-    m_keystate = SDL_GetKeyboardState(NULL);
-    
-    //Test
-    if (m_keystate and m_keystate[SDL_SCANCODE_R]){
-        TheApplication->getSceneStateMachine()->changeScene(new ChronoScene("Chrono"));
-    }
+    if (TheInputHandler->onPress(B_RESET))
+        TheSceneManager->changeScene(new ChronoScene("Chronometer"));
 }
 
 void ResultScene::render()
 {
-    TheApplication->getTextureManager()->drawBackground("Velocidad-bases", 0, 0, 0, 0, true);
+    TheTextureManager->drawBackground("Velocidad-bases", 0, 0, 0, 0, true);
 }
 
 bool ResultScene::onEnter()
 {
-    TheApplication->getTextureManager()->load("assets/Velocidad-bases.jpg","Velocidad-bases");
+    TheTextureManager->load("assets/Velocidad-bases.jpg","Velocidad-bases");
     return BaseScene::onEnter();
 }
 
 bool ResultScene::onExit()
 {
-    TheApplication->getTextureManager()->unload("Velocidad-bases");
+    TheTextureManager->unload("Velocidad-bases");
     return BaseScene::onExit();
 }
