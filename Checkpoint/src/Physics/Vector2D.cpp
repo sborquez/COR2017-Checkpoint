@@ -1,4 +1,4 @@
-#include "Vector2D.hpp"
+#include "../../include/Physics/Vector2D.hpp"
 #include <math.h>
 
 float Vector2D::magnitude()
