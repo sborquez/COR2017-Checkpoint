@@ -149,7 +149,7 @@ bool InputHandler::isPinOff(int pin)
   return !(isPinOn(pin));
 }
 
-bool onRising(int pin)
+bool InputHandler::onRising(int pin)
 {
   short int edge;
   short int body;
