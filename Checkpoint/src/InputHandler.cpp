@@ -3,6 +3,10 @@
 
 #include <wiringPi.h>
 
+/***********************/
+/*  InputHandler CLASS */
+/***********************/
+
 InputHandler::InputHandler()
 {
     gpio = false;
@@ -42,10 +46,12 @@ InputHandler::~InputHandler()
 // Actualize inputs
 void InputHandler::update()
 {
-    // TODO update gpio inputs
-    /*if (gpio) {
-
-    }*/
+    // update gpio inputs
+    if (gpio) {
+      for(auto it = gpio_inputs.begin(); it != gpio_inputs.end(); ++it) {
+        it->second->update_state();
+      }
+    }
 
     // event structure
     SDL_Event event;
@@ -118,18 +124,43 @@ bool InputHandler::setupPins()
 
   for (auto it=gpio_bottons.begin(); it != gpio_bottons.end(); ++it)
       enablePin(it->second);
-
-
 }
 
 bool InputHandler::enablePin(int pin)
 {
-    gpio_inputs[pin] = new GpioPin();
-    pinMode(pin, INPUT);
+    gpio_inputs[pin] = new GpioPin(pin);
 }
 
 bool InputHandler::enablePin(int pin, std::string id)
 {
   gpio_bottons[id] = pin;
   enablePin(pin);
+}
+
+bool InputHandler::isPinOn(int pin)
+{
+  return gpio_inputs[pin]->get_states().front();
+}
+
+bool InputHandler::isPinOff(int pin)
+{
+  return !(gpio_inputs[pin]->get_states().front());
+}
+
+/***************/
+/*  GPIO CLASS */
+/***************/
+
+GpioPin::GpioPin (int pin)
+{
+    pinMode(pin, INPUT);
+    id = pin;
+    states = {0, 0, 0, 0, 0};
+}
+
+void GpioPin::update_state()
+{
+    bool value = digitalRead(id);
+    states.insert(states.begin(), value);
+    states.pop_back();
 }

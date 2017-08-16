@@ -7,13 +7,18 @@
 #include <map>
 
 class GpioPin {
+public:
+  GpioPin (int pin);
+  ~GpioPin () {};
+
+  void update_state();
+
+  inline std::vector<bool> get_states() { return states; };
+  inline int get_id() { return id; };
+
 private:
     int id;
-    std::vector<bool> previous_states(5, LOW);
-
-public:
-    GpioPin (int pin);
-    ~GpioPin ();
+    std::vector<bool> states;
 };
 
 
@@ -54,19 +59,31 @@ public:
 
     // inputs
     // Test
-    bool isBPinOn(std::string botton);
     bool isPinOn(int pin);
+    inline bool isBPinOn(std::string botton)
+    {
+      isPinOn(gpio_bottons[botton]);
+    }
 
-    bool isBPinOff(std::string botton)
     bool isPinOff(int pin);
+    inline bool isBPinOff(std::string botton)
+    {
+      isPinOff(gpio_bottons[botton]);
+    }
 
     // Check if key was pressed once
-    bool onRising(std::string botton);
-    bool onRising(int pin);
+    // TODO
+    //bool onRising(int pin);
+    //inline bool onRising(std::string botton)
+    //{
+    //  onRising(gpio_bottons[botton]);
+    //}
+
+    inline bool get_gpio() { return gpio; }; 
 
 private:
     // botton keys
-    std::map<std:string, SDL_Scancode> keyboard_bottons
+    std::map<std::string, Uint8> keyboard_bottons;
 
     // Keys pressed once in actual state
     std::map<Uint8, bool> m_pressKey;
@@ -77,7 +94,7 @@ private:
     // enable gpio inptus
     bool gpio;
     //
-    std::map<int, GpioPin*> gpio_inputs;
     std::map<std::string, int> gpio_bottons;
+    std::map<int, GpioPin*> gpio_inputs;
 };
 #endif
