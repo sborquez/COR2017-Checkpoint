@@ -10,13 +10,13 @@ void BaseScene::handleEvents()
 {
 }
 
-void BaseScene::render() 
+void BaseScene::render()
 {
     //for (auto it = m_pObjects.begin(); it != m_pObjects.end(); ++it)
     //     it->render();
 }
 
-BaseScene::~BaseScene() 
+BaseScene::~BaseScene()
 {
     SDL_Log("\tEliminando objetos de escena");
     //for (auto it = m_pObjects.begin(); it != m_pObjects.end(); ++it)

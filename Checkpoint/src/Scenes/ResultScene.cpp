@@ -1,14 +1,14 @@
 #include "../../include/Scenes/ChronoScene.hpp"
 #include "../../include/Scenes/ResultScene.hpp"
 
-void ResultScene::update() 
+void ResultScene::update()
 {
     BaseScene::update();
 }
 
 void ResultScene::handleEvents()
 {
-    if (TheInputHandler->onPress(B_RESET))
+    if (TheInputHandler->onPress("B_RESET"))
         TheSceneManager->changeScene(new ChronoScene("Chronometer"));
 }
 
