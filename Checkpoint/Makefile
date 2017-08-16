@@ -17,11 +17,14 @@ all: $(TARGET)
 SDL_CFLAGS := $(shell sdl2-config --cflags)
 SDL_LDFLAGS := $(shell sdl2-config --libs) -lSDL2_image -LSDL2_ttf
 
+GPIO_LDFLAG := -lwiringPi
+
 override CFLAGS += $(SDL_CFLAGS)
 override LIBS += $(SDL_LDFLAGS)
+override LIBS += $(GPIO_LDFLAG)
 
 $(TARGET): $(OBJECTS)
-	@echo " Linking... $(APPNAME)" 
+	@echo " Linking... $(APPNAME)"
 	@mkdir -p $(TARGETDIR)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
