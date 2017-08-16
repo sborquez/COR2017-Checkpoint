@@ -4,6 +4,8 @@
 void ChronoScene::update()
 {
     BaseScene::update();
+    /*if (chronometer.isrunning)
+      chronometer.update() set time actual, calculate dif*/
 }
 
 void ChronoScene::handleEvents()
@@ -16,6 +18,23 @@ void ChronoScene::handleEvents()
       if (TheInputHandler->isPinOn("B_START"))
          std::cout << "start gpio " << std::endl;
     }
+
+    /*TODO
+    if (chronometer.isrunning){
+       if (isPinOff("running"))
+          time = chronometer.stop() set time Result, isrunning=false
+                                    and return Result
+          chronometer.reset() set times to 0
+          ResultScene* resultscene= new ResultScene("Result")
+          resultscene->time = time
+          TheSceneManager->pushScene(resultscene);
+
+    } else {
+        if (onRising("running"))
+          chronometer.start() //set time inicio y running=true
+    }
+    */
+
 }
 
 void ChronoScene::render()

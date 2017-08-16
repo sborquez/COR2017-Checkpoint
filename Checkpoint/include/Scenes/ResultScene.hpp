@@ -1,5 +1,5 @@
 #ifndef __ResultScene__
-#define __ResultScene__ 
+#define __ResultScene__
 
 #include "Scene.hpp"
 
@@ -13,10 +13,13 @@ public:
     void handleEvents();
 
     void render();
-    
+
     bool onExit();
-    
+
     bool onEnter();
+private:
+    // objeto text display
+    // tiempo medido
 };
 
 #endif

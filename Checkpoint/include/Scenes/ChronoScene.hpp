@@ -1,5 +1,5 @@
 #ifndef __ChronoScene__
-#define __ChronoScene__ 
+#define __ChronoScene__
 
 #include "Scene.hpp"
 
@@ -13,10 +13,14 @@ public:
     void handleEvents();
 
     void render();
-    
+
     bool onExit();
-    
+
     bool onEnter();
+
+private:
+  //objeto chronometro
+  // objeto text display(tiempo chronometer)
 };
 
 #endif
