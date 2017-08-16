@@ -72,14 +72,13 @@ public:
     }
 
     // Check if key was pressed once
-    // TODO
-    //bool onRising(int pin);
-    //inline bool onRising(std::string botton)
-    //{
-    //  onRising(gpio_bottons[botton]);
-    //}
+    bool onRising(int pin);
+    inline bool onRising(std::string botton)
+    {
+      onRising(gpio_bottons[botton]);
+    }
 
-    inline bool get_gpio() { return gpio; }; 
+    inline bool get_gpio() { return gpio; };
 
 private:
     // botton keys

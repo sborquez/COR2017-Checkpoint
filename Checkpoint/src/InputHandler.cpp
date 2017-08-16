@@ -139,13 +139,29 @@ bool InputHandler::enablePin(int pin, std::string id)
 
 bool InputHandler::isPinOn(int pin)
 {
-  return gpio_inputs[pin]->get_states().front();
+  std::vector<bool> tmpStates = gpio_inputs[pin]->get_states();
+  short int suma = tmpStates[0] + tmpStates[1] + tmpStates[2] + tmpStates[3] + tmpStates[4] ;
+  return suma >= 3;
 }
 
 bool InputHandler::isPinOff(int pin)
 {
-  return !(gpio_inputs[pin]->get_states().front());
+  return !(isPinOn(pin));
 }
+
+bool onRising(int pin)
+{
+  short int edge;
+  short int body;
+  std::vector<bool> tmpStates = gpio_inputs[pin]->get_states();
+
+  edge = tmpStates[0] + tmpStates[1] + tmpStates[2];
+  body = tmpStates[3] + tmpStates[4];
+
+  return (edge == 3 and body == 0);
+
+}
+
 
 /***************/
 /*  GPIO CLASS */
