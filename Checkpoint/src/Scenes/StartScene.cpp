@@ -12,6 +12,11 @@ void StartScene::handleEvents()
 {
     if (TheInputHandler->onPress("B_RESET"))
         TheSceneManager->changeScene(new ChronoScene("Chronometer"));
+
+    if (TheInputHandler->get_gpio()) {
+      if (TheInputHandler->onRising("B_RESET"))
+          TheSceneManager->changeScene(new ChronoScene("Chronometer"));
+    }
 }
 
 void StartScene::render()

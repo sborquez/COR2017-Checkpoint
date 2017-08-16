@@ -60,22 +60,22 @@ public:
     // inputs
     // Test
     bool isPinOn(int pin);
-    inline bool isBPinOn(std::string botton)
+    inline bool isPinOn(std::string botton)
     {
-      isPinOn(gpio_bottons[botton]);
+      return isPinOn(gpio_bottons[botton]);
     }
 
     bool isPinOff(int pin);
-    inline bool isBPinOff(std::string botton)
+    inline bool isPinOff(std::string botton)
     {
-      isPinOff(gpio_bottons[botton]);
+      return isPinOff(gpio_bottons[botton]);
     }
 
     // Check if key was pressed once
     bool onRising(int pin);
     inline bool onRising(std::string botton)
     {
-      onRising(gpio_bottons[botton]);
+      return onRising(gpio_bottons[botton]);
     }
 
     inline bool get_gpio() { return gpio; };

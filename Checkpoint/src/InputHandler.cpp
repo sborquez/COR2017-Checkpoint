@@ -137,6 +137,8 @@ bool InputHandler::enablePin(int pin, std::string id)
   enablePin(pin);
 }
 
+
+//TODO define in GpioPin 
 bool InputHandler::isPinOn(int pin)
 {
   std::vector<bool> tmpStates = gpio_inputs[pin]->get_states();

@@ -10,6 +10,12 @@ void ResultScene::handleEvents()
 {
     if (TheInputHandler->onPress("B_RESET"))
         TheSceneManager->changeScene(new ChronoScene("Chronometer"));
+    if (TheInputHandler->get_gpio()) {
+      if (TheInputHandler->onRising("B_RESET"))
+          TheSceneManager->changeScene(new ChronoScene("Chronometer"));
+      if (TheInputHandler->isPinOn("B_QUIT"))
+          std::cout << "quit gpio " << std::endl;
+    }
 }
 
 void ResultScene::render()
