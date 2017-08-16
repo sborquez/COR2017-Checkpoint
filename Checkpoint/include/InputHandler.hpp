@@ -2,32 +2,27 @@
 #define __InputHandler__
 
 #include <SDL2/SDL.h>
+#include <string>
+#include <vector>
 #include <map>
 
-enum Botton
-{
-    B_UP = SDL_SCANCODE_UP,
-    B_DOWN = SDL_SCANCODE_DOWN,
-    B_LEFT = SDL_SCANCODE_LEFT,
-    B_RIGHT = SDL_SCANCODE_RIGHT,
-    B_A = SDL_SCANCODE_Z,
-    B_B = SDL_SCANCODE_X,
-    B_C = SDL_SCANCODE_C,
-    B_D  = SDL_SCANCODE_S,
-    B_LTRIGER = SDL_SCANCODE_A,
-    B_RTRIGER = SDL_SCANCODE_D,
-    B_START = SDL_SCANCODE_EXECUTE,
-    B_SELECT = SDL_SCANCODE_BACKSPACE,
-    B_RESET = SDL_SCANCODE_R,
-    B_QUIT = SDL_SCANCODE_ESCAPE
+class GpioPin {
+private:
+    int id;
+    std::vector<bool> previous_states(5, LOW);
+
+public:
+    GpioPin (int pin);
+    ~GpioPin ();
 };
+
 
 
 class InputHandler
 {
 public:
     InputHandler();
-    
+
     ~InputHandler();
 
     // Actualize inputs
@@ -35,21 +30,54 @@ public:
 
     // Check if key is pressed
     bool isKeyDown(SDL_Scancode key);
-    bool isKeyDown(Botton botton);
+    bool isKeyDown(std::string botton);
 
     // Check if key is not pressed
     bool isKeyUp(SDL_Scancode key);
-    bool isKeyUp(Botton botton);
+    bool isKeyUp(std::string botton);
 
     // Check if key was pressed once
     bool onPress(SDL_Scancode key);
-    bool onPress(Botton botton);
+    bool onPress(std::string botton);
+
+    // Gpio
+    // setup pin
+    bool setupPins();
+
+    // enable a pin:
+    // you can use an id, both method and a GpioPin class to
+    // gpio_inputs using pin number as key.
+    // enable pin as input, don't add to botton_gpio
+    bool enablePin(int pin);
+    // enable pin as input and add it to botton_gpio
+    bool enablePin(int pin, std::string id);
+
+    // inputs
+    // Test
+    bool isBPinOn(std::string botton);
+    bool isPinOn(int pin);
+
+    bool isBPinOff(std::string botton)
+    bool isPinOff(int pin);
+
+    // Check if key was pressed once
+    bool onRising(std::string botton);
+    bool onRising(int pin);
 
 private:
+    // botton keys
+    std::map<std:string, SDL_Scancode> keyboard_bottons
+
     // Keys pressed once in actual state
     std::map<Uint8, bool> m_pressKey;
 
     // Keys pressed in actual state
     const Uint8* m_Keystate;
+
+    // enable gpio inptus
+    bool gpio;
+    //
+    std::map<int, GpioPin*> gpio_inputs;
+    std::map<std::string, int> gpio_bottons;
 };
 #endif

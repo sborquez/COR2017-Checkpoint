@@ -5,7 +5,7 @@ Application* Application::s_pInstance = NULL;
 
 bool Application::init(const char* title, int xpos, int ypos, int width,
                        int height, bool fullscreen, bool gpio)
-{   
+{
     // Habilitar pantalla completa
     int flags = 0;
     if (fullscreen)
@@ -22,7 +22,7 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     }
 
     // Intento de iniciar nueva ventana
-    SDL_Log("\tIniciando Ventana ... ");    
+    SDL_Log("\tIniciando Ventana ... ");
     m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
     if (m_pWindow == NULL) {
         SDL_Log("\tError al crear ventana - %s", SDL_GetError());
@@ -31,22 +31,22 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     SDL_Log("\tVentana iniciada");
 
     // Intento de iniciar Renderer
-    SDL_Log("\tIniciando Renderer ... ");    
+    SDL_Log("\tIniciando Renderer ... ");
     m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
     if (m_pRenderer == NULL) {
         SDL_Log("\tError al crear ventana - %s", SDL_GetError());
         return false;
     }
     SDL_Log("\tRenderer iniciado");
-    
-    // Inicio exitoso   
-    SDL_Log("SDL inicio exitoso");    
-    
+
+    // Inicio exitoso
+    SDL_Log("SDL inicio exitoso");
+
 
 
     // Iniciando variables
-    
-    SDL_Log("Iniciando gestores ...");    
+
+    SDL_Log("Iniciando gestores ...");
     // TextureManager
     m_pTextureManager = new TextureManager;
     // Carpeta data encontrada
@@ -60,22 +60,18 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
     }
 
     // Input Handler
-    /*
+    m_pInputHandler = new InputHandler();
     if (gpio)
-        m_pInputHandler = new InputHandlerGpio;
-    else
-        m_pInputHandler = new InputHandlerKeyBoard;
-    */
-    m_pInputHandler = new InputHandler;
+        m_pInputHandler->setupPins();
 
-    // SceneStateMachine, iniciar nueva 
-    m_pSceneStateMachine = new SceneStateMachine;
+    // SceneStateMachine, iniciar nueva
+    m_pSceneStateMachine = new SceneStateMachine();
     // Cargar la primera escena
     m_pSceneStateMachine->firstScene();
 
     // Comenzar bucle principal, la aplicacion esta corriendo
     m_bRunning = true;
-    
+
     return true;
 }
 
@@ -93,7 +89,7 @@ void Application::update()
 }
 
 // Dibujar en pantalla
-void Application::render() 
+void Application::render()
 {
     // Limpiar pantalla
     SDL_RenderClear(m_pRenderer);
@@ -119,7 +115,7 @@ Application::~Application()
     if (m_pWindow != NULL) {
         SDL_Log("\tEliminando Ventana");
         SDL_DestroyWindow(m_pWindow);
-    }   
+    }
     if (m_pRenderer != NULL) {
         SDL_Log("\tEliminando Renderer");
         SDL_DestroyRenderer(m_pRenderer);
