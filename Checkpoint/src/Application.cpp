@@ -16,7 +16,7 @@ bool Application::init(const char* title, int xpos, int ypos, int width,
 
     // Intento de iniciar SDL
     SDL_Log("Iniciando SDL ... ");
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         SDL_Log("SDL inicio fallido - %s ", SDL_GetError());
         return false;
     }
@@ -79,6 +79,10 @@ void Application::handleEvents()
 {
     // Manipular eventos
     m_pInputHandler->update();
+    if(m_pInputHandler->onPress("B_QUIT")) {
+	quit();
+        return;
+    }
     m_pSceneStateMachine->handleEvents();
 }
 

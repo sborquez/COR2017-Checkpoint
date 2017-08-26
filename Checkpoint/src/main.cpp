@@ -1,7 +1,7 @@
 #include "../include/Application.hpp"
 
-#define HEIGHT 480
-#define WIDTH 640
+#define HEIGHT 1080
+#define WIDTH 1920
 
 int main(int argc, char const *argv[])
 {
