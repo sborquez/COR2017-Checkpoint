@@ -1,4 +1,4 @@
-from Scenes import *
+gitfrom Scenes import *
 import Inputs
 from sys import argv
 
