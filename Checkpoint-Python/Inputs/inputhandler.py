@@ -1,5 +1,7 @@
 import pygame
 from configparser import ConfigParser
+from Inputs.inputbox import ask
+
 
 pygame.init()
 
@@ -24,9 +26,7 @@ class InputHandler:
     def update(self):
         raise NotImplementedError
 
-    def text_input(self, validate=lambda s: (s, True)):
-
+    def text_input(self, validate=lambda s: (s, True), show=""):
         """Espera a una entrada de texto, retorna el input y si es valido. """
-
-
-        return tuple(validate(input()))
+        text = ask(show)
+        return tuple(validate(text))

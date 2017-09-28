@@ -1,4 +1,4 @@
-gitfrom Scenes import *
+from Scenes import *
 import Inputs
 from sys import argv
 
@@ -19,5 +19,3 @@ app = SceneManager("Competencia Robotica 2017", width=1280, height=720, fullscre
 app.change_scene(scene_id="TitleScreen", Scene=TitleScreen(app, "TitleScreen"), remove=False)
 
 app.run()
-
-app.quit()
