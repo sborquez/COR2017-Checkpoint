@@ -25,10 +25,13 @@ else:
 
             # Setup
             print("Using GPIO mode")
-            print("\tSetting mode %s" % "BCM" if self.mode == 0 else "BOARD")
+            print("\tSetting mode %s" % "BCM" if self.mode == GPIO.BCM else "BOARD")
             GPIO.setmode(self.mode)
 
-            print("\tSetting OUTPUTS pins:", self.botones.values())
+            print("\tSetting OUTPUTS pins:")
+            for k,v in self.botones.items():
+                print("\t\t%s:%d" % (k, v))
+
             GPIO.setup(list(self.botones.values()), GPIO.IN)
 
             # Estados previos

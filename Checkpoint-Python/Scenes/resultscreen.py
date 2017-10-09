@@ -28,6 +28,9 @@ class ResultScreen(Scene):
         if inputs_handler.on_press("reset"):
             self.manager.change_scene(scene_id="Chrono", remove=False)
 
+        if inputs_handler.on_press("exit"):
+            self.manager.stop_running()
+
     def on_draw(self, screen):
         "Se llama cuando se quiere dibujar la pantalla."
 

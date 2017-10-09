@@ -37,6 +37,7 @@ class Chronometer(Scene):
         "Se llama cuando llega un evento especifico al bucle."
         if self.state == "Aux":
             self.state = "Reading"
+            self.runner_text.set_text("Ingresar equipo:")
 
         elif self.state == "Reading":
             text, validate = inputs_handler.text_input(show="Input: ", validate=lambda s: (s, s.isdigit()))
