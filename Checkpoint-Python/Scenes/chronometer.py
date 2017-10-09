@@ -64,12 +64,12 @@ class Chronometer(Scene):
                 self.chronometer.reset()
 
             elif inputs_handler.is_up("start"):
-                self.runner_text.set_text("")
                 self.state = "Finish"
                 self.chronometer.stop()
 
-        else:
+        else: #state finish
             self.manager.change_scene(scene_id="Results", remove=False)
+            self.manager.globals["runner"] = self.runner_text.text
             self.manager.globals["time_mark"] = (self.chronometer.get_time(), self.chronometer.get_format_time())
             self.state = "StandBy"
 

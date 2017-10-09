@@ -5,3 +5,6 @@ Checkpoint/lib/*
 # Ignora executables
 Checkpoint/bin/*
 
+# Ignora pyc
+
+Checkpoint*.pyc

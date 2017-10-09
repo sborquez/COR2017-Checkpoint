@@ -14,11 +14,14 @@ class ResultScreen(Scene):
         self.background = load_image("resources/images/background1.jpg")
 
         #TODO cambiar fuente
-        self.time_text = AppObjects.Text(size=80)
+        self.time_text = AppObjects.Text(size=60)
+        self.runner_text = AppObjects.Text(size=60)
 
     def on_update(self):
         "Actualizacion logica que se llama automaticamente desde el manager."
-        self.time_text.set_text(self.manager.globals["time_mark"][1])
+        self.time_text.set_text(self.manager.globals["time_mark"][1], color=(0,0,0))
+        self.runner_text.set_text(self.manager.globals["runner"], color=(0,0,0))
+
 
     def on_event(self, inputs_handler):
         "Se llama cuando llega un evento especifico al bucle."
@@ -34,3 +37,4 @@ class ResultScreen(Scene):
         # Tiempo
         # TODO posicionar correctamente
         self.time_text.render(screen, self.manager.globals["width"]/3, self.manager.globals["heigth"]/2)
+        self.runner_text.render(screen, self.manager.globals["width"]/4, self.manager.globals["heigth"]/3)

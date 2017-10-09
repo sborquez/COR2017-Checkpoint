@@ -8,6 +8,7 @@ class KeyBoard(InputHandler):
         self.botones = {boton: int(key) for boton, key in self.config["KEYBOARD"].items()}
 
         pressed = pygame.key.get_pressed()
+        self.previos = {}
         self.actual = {boton: pressed[index] for boton, index in self.botones.items()}
 
     def is_down(self, boton):
