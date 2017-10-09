@@ -2,18 +2,19 @@ from Inputs import InputHandler
 
 try:
     import RPi.GPIO as GPIO
-    from Inputs import KeyBoard
+
 
 except RuntimeError:
+    from Inputs import KeyBoard
     print("Gpio no disponible")
 
 
-    class GPIO(KeyBoard):
+    class Gpio(KeyBoard):
         def __init__(self):
             super().__init__()
 
 else:
-    class GPIO(InputHandler):
+    class Gpio(InputHandler):
         def __init__(self):
             super().__init__()
 
