@@ -39,16 +39,16 @@ else:
             self.actual = {boton: GPIO.input(pin) for boton, pin in self.botones.items()}
 
         def is_down(self, boton):
-            return GPIO.input(self.botones[boton]) == GPIO.LOW
+            return self.actual[boton] == GPIO.HIGH
 
         def is_up(self, boton):
-            return GPIO.input(self.botones[boton]) == GPIO.HIGH
+            return self.actual[boton] == GPIO.LOW
 
         def on_press(self, boton):
-            return GPIO.input(self.botones[boton]) == GPIO.HIGH and self.previos[boton] == GPIO.LOW
+            return self.actual[boton] == GPIO.HIGH and self.previos[boton] == GPIO.LOW
 
         def on_release(self, boton):
-            return GPIO.input(self.botones[boton]) == GPIO.LOW and self.previos[boton] == GPIO.HIGH
+            return self.actual[boton] == GPIO.LOW and self.previos[boton] == GPIO.HIGH
 
         def update(self):
             self.previos = dict(self.actual)

@@ -54,9 +54,9 @@ class Chronometer(Scene):
             if inputs_handler.on_press("start"):
                 self.chronometer.start()
                 self.state = "Running"
+
             elif inputs_handler.on_press("reset"):
-                self.runner_text.set_text("")
-                self.state = "Reading"
+                self.state = "Aux"
 
         elif self.state == "Running":
             if inputs_handler.on_press("reset"):
@@ -65,6 +65,8 @@ class Chronometer(Scene):
                 self.chronometer.reset()
 
             elif inputs_handler.is_up("start"):
+                print(inputs_handler.previos)
+                print(inputs_handler.actual)
                 self.state = "Finish"
                 self.chronometer.stop()
 
