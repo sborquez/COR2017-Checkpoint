@@ -19,12 +19,16 @@ else:
             super().__init__()
 
             # Cargar configuracion
-            self.mode = GPIO.BCM if self.config["GPIO"]["mode"] == 0 else GPIO.BOARD
+            self.mode = GPIO.BCM if int(self.config["GPIO"]["mode"]) == 0 else GPIO.BOARD
             self.botones = {boton: int(pin) for boton, pin in self.config["GPIO"].items() if
                             boton != "mode" and int(pin) != 0}
 
             # Setup
+            print("Using GPIO mode")
+            print("\tSetting mode %s" % "BCM" if self.mode == 0 else "BOARD")
             GPIO.setmode(self.mode)
+
+            print("\tSetting OUTPUTS pins:", self.botones.values())
             GPIO.setup(self.botones.values(), GPIO.IN)
 
             # Estados previos

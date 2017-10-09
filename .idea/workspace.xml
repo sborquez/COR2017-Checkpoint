@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cd66f1c-296a-4ee7-a6be-393560e30c8a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Checkpoint-Python/Inputs/gpio.py" afterPath="$PROJECT_DIR$/Checkpoint-Python/Inputs/gpio.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini" afterPath="$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,21 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inputs.ini" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inputs.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            <state relative-caret-position="387">
+              <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gpio.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gpio.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/gpio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+            <state relative-caret-position="216">
+              <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -108,11 +110,11 @@
         <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/inputbox.py" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Scenes/chronometer.py" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Scenes/resultscreen.py" />
-        <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/keyboard.py" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/__init__.py" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Checkpoint.py" />
         <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/gpio.py" />
+        <option value="$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini" />
       </list>
     </option>
   </component>
@@ -676,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -714,8 +708,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/gpio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        <state relative-caret-position="216">
+          <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checkpoint-Python/Inputs/inputs.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
