@@ -10,7 +10,7 @@ for option in argv[1:]:
     if option == "--fullscreen":
         FULLSCREEN = True
     elif option == "--gpio":
-        input1 = Inputs.GPIO()
+        input1 = Inputs.Gpio()
     elif option == "--drive":
         drive = True
 
