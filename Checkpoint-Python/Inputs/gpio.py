@@ -29,7 +29,7 @@ else:
             GPIO.setmode(self.mode)
 
             print("\tSetting OUTPUTS pins:", self.botones.values())
-            GPIO.setup(self.botones.values(), GPIO.IN)
+            GPIO.setup(list(self.botones.values()), GPIO.IN)
 
             # Estados previos
             self.previos = {}
