@@ -33,6 +33,17 @@ class Chronometer(Scene):
         format_time = self.chronometer.get_format_time()
         self.time_text.set_text(format_time)
 
+
+    def validator(self, text):
+        equipo_dict, err = self.manager.DB.get_tiempo_by_member(text)
+        if err is None:
+            equipo_nombre = equipo_dict["nombre"]
+            print(equipo_nombre)
+            return equipo_nombre, True
+        else:
+            print(err)
+            return "", False
+
     def on_event(self, inputs_handler):
         "Se llama cuando llega un evento especifico al bucle."
         if self.state == "Aux":
@@ -40,7 +51,13 @@ class Chronometer(Scene):
             self.runner_text.set_text("Ingresar equipo:")
 
         elif self.state == "Reading":
-            text, validate = inputs_handler.text_input(show="Input: ", validate=lambda s: (s, s.isdigit()))
+            #text, validate = inputs_handler.text_input(show="Input: ", validate=self.validator)
+            text = input("rut: ")
+
+            text, validate = self.validator(text)
+
+
+
             if validate:
                 #TODO  buscar en la BD
                 self.runner_text.set_text(text)
@@ -65,8 +82,7 @@ class Chronometer(Scene):
                 self.chronometer.reset()
 
             elif inputs_handler.is_up("start"):
-                print(inputs_handler.previos)
-                print(inputs_handler.actual)
+                print(inputs_handler.previos, inputs_handler.actual)
                 self.state = "Finish"
                 self.chronometer.stop()
 

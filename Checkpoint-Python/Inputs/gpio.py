@@ -5,11 +5,10 @@ try:
 
 
 except RuntimeError:
-    from Inputs import KeyBoard
     print("Gpio no disponible")
 
 
-    class Gpio(KeyBoard):
+    class Gpio(InputHandler):
         def __init__(self):
             super().__init__()
 

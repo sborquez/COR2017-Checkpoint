@@ -15,7 +15,7 @@ class SceneManager:
 
     pygame.init()
 
-    def __init__(self, title: str, width: int, height: int, input_handler: object, fullscreen: bool = False):
+    def __init__(self, title: str, width: int, height: int, input_handler: object, database: object, fullscreen: bool = False):
         # Crear una nueva ventana
         flags = pygame.RESIZABLE
         if fullscreen:
@@ -38,6 +38,9 @@ class SceneManager:
 
         # Elegir un medio de input
         self.input_handler = input_handler
+
+        # Conectar con la Base de Datos
+        self.DB = database
 
         # Variables globales entre escenas
         self.globals = {
