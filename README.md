@@ -19,16 +19,16 @@ Se diseñó una línea de meta capáz de detectar el paso de los robots, esto se
 
 ## Requisitos
 
-1 Software
-	1 Python 3
-	2 PyGame
-	3 WiringPy o GPIO
+- Software
+	1. Python 3
+	2. PyGame
+	3. WiringPy o GPIO
 
-2 Hardware
-	1 Rasberry Pi 3
-	2 Lector de códigos de barra usb
-	3 Sensores Barrera (2)
-	4 ...
+- Hardware
+	1. Rasberry Pi 3
+	2. Lector de códigos de barra usb
+	3. Sensores Barrera (2)
+	4. ...
 
 ## Installation
 
