@@ -7,15 +7,15 @@ donde se invita a estudiantes de diferentes partes del país y fuera de este a p
 
 ### El problema 
 
-Una de las competencias es la categoría de velocidad:[Competencia robotica - velocidad](http://www.competenciarobotica.cl/2017/velocidad/).
-Esta consiste en una carrera contra reloj para los robot en un circuito.
+Una de las competencias es la categoría de [velocidad](http://www.competenciarobotica.cl/2017/velocidad/).
+Esta consiste en una carrera en un circuito, los robots corren contra el reloj y gana el robot que complete el circuito en el menor tiempo.
 
-Se desea optimizar el proceso de toma de tiempos, automatizandolo y mostrando el tiempo obtenido de manera inmediata para los competidores.
+Se desea optimizar el proceso de toma de tiempos, automatizandolo y mostrando el tiempo obtenido de manera inmediata a los competidores.
 
 
 ### La solución
 
-Se diseñó una línea de meta capáz de detectar el paso de los robots, esto se comunica a una Raspberry Pi encargada de **identificar**, **cronometrar**, **mostrar** y **guardar** los tiempos medidos para cada equipo. 
+Se diseñó una línea de meta capaz de detectar el paso de los robots, esto se comunica a una Raspberry Pi encargada de **identificar**, **cronometrar**, **mostrar** y **guardar** los tiempos medidos para cada equipo. 
 
 ## Requisitos
 
