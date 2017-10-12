@@ -11,23 +11,40 @@ class ResultScreen(Scene):
     def __init__(self, manager, scene_id):
         super().__init__(manager, scene_id)
         #TODO Cambiar imagen de fondo
-        self.background = load_image("resources/images/background.png")
+        self.background = load_image("resources/images/background2.png")
+
+        self.state = "exit"
 
         #TODO cambiar fuente
-        self.time_text = AppObjects.Text(size=60)
-        self.runner_text = AppObjects.Text(size=60)
+        self.time_text = AppObjects.Text(size=280, font="resources/fonts/TitilliumWeb-Regular.ttf", color=(230,230,230))
+        self.runner_text = AppObjects.Text(size=120, font="resources/fonts/data-latin.ttf", color=(245,245,245))
 
     def on_update(self):
         "Actualizacion logica que se llama automaticamente desde el manager."
-        self.time_text.set_text(self.manager.globals["time_mark"][1], color=(0,0,0))
-        self.runner_text.set_text(self.manager.globals["runner"], color=(0,0,0))
+        self.time_text.set_text(self.manager.globals["time_mark"][1], color=(230,230,230))
+        if self.state == "exit":
+            self.tiempo_seg = self.manager.globals["time_mark"][0]
+            self.tiempo_form = self.manager.globals["time_mark"][1]
+
+            # Se esta usando la base de datos
+            if self.manager.globals["db"]:
+                self.equipo = self.manager.globals["equipo_actual"]
+                self.runner_text.set_text(self.equipo["nombre"], color=(245,245,245))
+                print(self.equipo, self.tiempo_form, self.tiempo_seg)
+
+            else:
+                print(self.tiempo_seg, self.tiempo_form)
+            self.state = "entry"
+
+        elif self.state == "entry":
+            pass
 
 
     def on_event(self, inputs_handler):
         "Se llama cuando llega un evento especifico al bucle."
-        if inputs_handler.on_press("reset"):
+        if inputs_handler.on_press("reset") and self.state=="entry":
             self.manager.change_scene(scene_id="Chrono", remove=False)
-
+            self.state = "exit"
         #if inputs_handler.on_press("exit"):
             #self.manager.stop_running()
 
@@ -39,5 +56,10 @@ class ResultScreen(Scene):
 
         # Tiempo
         # TODO posicionar correctamente
-        self.time_text.render(screen, self.manager.globals["width"]/3, self.manager.globals["heigth"]/2)
-        self.runner_text.render(screen, self.manager.globals["width"]/4, self.manager.globals["heigth"]/3)
+        #TODO Agregar dibujo del cronometro
+        #self.chronometer.draw(screen, 200, 300)
+        self.runner_text.render(screen, y=380, centerx=(True, 1920))
+
+        # Tiempo
+        #TODO ajustar a nuevo fondo
+        self.time_text.render(screen, centerx=(True, 1920), y=500)

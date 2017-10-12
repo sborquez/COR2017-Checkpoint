@@ -25,9 +25,6 @@ for option in argv[1:]:
 
 app = SceneManager("Competencia Robotica 2017", width=1920, height=1080, fullscreen=FULLSCREEN,
                    input_handler=input1, database=database, verbose=verbose)
-
-if verbose:
-    print("Title Scene")
 app.change_scene(scene_id="TitleScreen", Scene=TitleScreen(app, "TitleScreen"), remove=False)
 
 app.run()

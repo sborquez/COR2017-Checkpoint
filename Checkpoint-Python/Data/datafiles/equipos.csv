@@ -13,28 +13,28 @@ id,nombre,equipo,id_equipo
 203852746,Fernando Javier Fuentes Palma,Transformers,6
 210152164,Jose Ignacio Jerez Quijada,Transformers,6
 186477715,Felipe Alexis Fredes Polanco,CRU,7
-184965984,José Ignacio Ríos Sánchez,CRU,7
+184965984,Jose Ignacio Ríos Sánchez,CRU,7
 188626335,Francisco Antonio  Salazar Candia,CRU,7
 181148039,Claudio Antonio Castro Vasquez,CRU,7
-185386031,Cristóbal Andres Jiménez Howard,Fabfast,8
+185386031,Cristóbal Andres Jimenez Howard,Fabfast,8
 17120979,Juan Carlos Tapia Rojo,Fabfast,8
-174124027,Felipe Andrés Pérez Alvarado,Jaguerbot,9
+174124027,Felipe Andres Perez Alvarado,Jaguerbot,9
 196378820,Farid Ignacio Elfar Guajardo,Dubot runner,10
 186190882,Gabriel Esteban Estivill Araya,Alto Delay,11
 19331354K,Javier Ignacio Urrutia Rebello,Scuderia Robotic,12
 19331354k,Javier Ignacio Urrutia Rebello,Scuderia Robotic,12
-196321462,Héctor Alonso Garcés Harbst,ICARO 3,13
+196321462,Hector Alonso Garces Harbst,ICARO 3,13
 213171488,Brenda Antonia Vivanco Henríquez,Titanfall.A2,14
-20904739K,Guillermo Enrique González Arévalo,GBD,15
-20904739k,Guillermo Enrique González Arévalo,GBD,15
+20904739K,Guillermo Enrique González Arevalo,GBD,15
+20904739k,Guillermo Enrique González Arevalo,GBD,15
 210685006,Ivana Antonella Vallejos Menares,The Kingdom,16
-20975035K,Paula Belén Bernal Hormazábal,Microbots,17
-20975035k,Paula Belén Bernal Hormazábal,Microbots,17
+20975035K,Paula Belen Bernal Hormazábal,Microbots,17
+20975035k,Paula Belen Bernal Hormazábal,Microbots,17
 210027246,Jesús Antonio Menares Fuentes,SLIPKNOT,18
-186613015,Simón Andrés Rodríguez Contreras,Icaro 1,19
-188103456,Benjamín Andrés Lobos González,RoboHunters,20
+186613015,Simón Andres Rodríguez Contreras,Icaro 1,19
+188103456,Benjamín Andres Lobos González,RoboHunters,20
 182257222,Luis alfonso toloza albornoz,Los super poxicos,21
-190899993,Marcos Alejandro Andrés Pérez Toledo,Mr Rapidin,22
+190899993,Marcos Alejandro Andres Perez Toledo,Mr Rapidin,22
 189286538,Flavio Ignacio Norambuena Cancino,G4,23
 197452420,matias andres fredes garcia,TYR ROBOTICS,24
 192681804,Vincent Andre Depassier Casanova,TIR,25
@@ -42,7 +42,7 @@ id,nombre,equipo,id_equipo
 AQ 401256,Nicolas Geovanny Niño Niño,CON-CIENCIA-COL,27
 AS 650340,Juan Esteban Bastidas Escobar,CON-CIENCIA-COL2,28
 215650081,Francesco Crivelli González,Lightracers,29
-196241485,Francisco José Pessot Marambio,ICARO 3,13
+196241485,Francisco Jose Pessot Marambio,ICARO 3,13
 170541294,evelyn  gonzalez,Jaguerbot,9
 169795274,Rodrigo Alonso Fuentes Carozzi,Dubot runner,10
 198780146,Ashley Mebahel Raziel Jara Goicovich,Alto Delay,11
@@ -63,13 +63,13 @@ AS 650340,Juan Esteban Bastidas Escobar,CON-CIENCIA-COL2,28
 183316214,Juan Manuel Corrales Faunes,Jaguerbot,9
 201282713,Marco Ignacio Reyes Cayuqueo,Dubot runner,10
 197003618,Ignacio Oliver Hoces,Alto Delay,11
-196052992,José Miguel Enrique Camus Rojas,Scuderia Robotic,12
+196052992,Jose Miguel Enrique Camus Rojas,Scuderia Robotic,12
 196374116,Tomás Ignacio  Bravo González,ICARO 3,13
 211322551,Lorenzo Esteban Gaete Gonzalez,Titanfall.A2,14
-206574275,Belén Monserratt Valenzuela Cifuentes,GBD,15
+206574275,Belen Monserratt Valenzuela Cifuentes,GBD,15
 211282053,Constanza Camila Quilahuilque Salazar,The Kingdom,16
 206568976,Javier Esteban Valenzuela Meza,Microbots,17
-209837579,Maximiliano Andrés Chamorro Portilla,SLIPKNOT,18
+209837579,Maximiliano Andres Chamorro Portilla,SLIPKNOT,18
 199405870,Marcelo Alejandro Juan Alberto Muñoz Villarroel,RoboHunters,20
 192998476,sebastian ignacio gonzalez calquin,Los super poxicos,21
 191060644,Zoraya Olivia González Ayala,Mr Rapidin,22
@@ -78,7 +78,7 @@ AS 650340,Juan Esteban Bastidas Escobar,CON-CIENCIA-COL2,28
 193384048,Bryan Mauricio  Faundez Aguilera,TIR,25
 180080236,Agustín Gabriel Montero López,Team Tesla,26
 198392499,Jaime Eduardo San Martin Angulo,Alto Delay,11
-209178923,Matias Eduardo Maillard Gutiérrez,GBD,15
+209178923,Matias Eduardo Maillard Gutierrez,GBD,15
 203593481,Jean Franco Contreras Paniagua,Microbots,17
 209066890,Eros Angel Luis Raggi Sosa,SLIPKNOT,18
 198157368,Martín Ignacio Stockle Cornejo,RoboHunters,20

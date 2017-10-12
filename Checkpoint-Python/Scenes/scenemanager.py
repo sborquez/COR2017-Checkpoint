@@ -19,8 +19,6 @@ class SceneManager:
                     database: object, fullscreen: bool = False, verbose: bool = False):
         # Crear una nueva ventana
         flags = pygame.RESIZABLE
-        if fullscreen:
-            flags |= pygame.FULLSCREEN
 
         self.screen = pygame.display.set_mode((width, height), flags)
 
@@ -47,11 +45,14 @@ class SceneManager:
 
         # Variables globales entre escenas
         self.globals = {
-             "width": width,
-            "heigth": height,
-             "title": title,
-             "verbose": verbose
+             "width"    : width,
+             "heigth"   : height,
+             "title"    : title,
+             "verbose"  : verbose,
+             "db"       : database is not None
         }
+        if fullscreen:
+            pygame.display.toggle_fullscreen()
 
     def run(self):
         """Pone en funcionamiento el bucle principal de la aplicacion."""
@@ -98,6 +99,8 @@ class SceneManager:
     def change_scene(self, scene_id, Scene=None, remove=True):
         """ Cambia de escena """
         actual = self.running_scene
+        if self.globals["verbose"]:
+            print("Cambiando a %s" % scene_id)
 
         # En caso de querer cargar una nueva escena
         if Scene is not None:

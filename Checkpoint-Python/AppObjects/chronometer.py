@@ -31,7 +31,9 @@ class Chronometer:
 
     def get_format_time(self):
         seconds = self.get_time()
-        return strftime("%M:%S:", gmtime(seconds)) + str(seconds % 1)[2:5]
+        mili = str(seconds % 1)[2:5]
+        mili = "000" if mili == "0" else mili
+        return strftime("%M:%S:", gmtime(seconds)) + mili
 
     def draw(self, screen, x, y):
         arc(screen, x, y, 100, -90, int((360 * self.get_time()) % 360) - 90,(255, 255, 255))

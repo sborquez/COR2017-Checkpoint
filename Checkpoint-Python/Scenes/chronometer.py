@@ -10,9 +10,9 @@ class Chronometer(Scene):
     def __init__(self, manager, scene_id):
         super().__init__(manager, scene_id)
 
-        self.background = load_image("resources/images/background.png")
-        self.time_text = AppObjects.Text(size=100)
-        self.runner_text = AppObjects.Text(size=60)
+        self.background = load_image("resources/images/background2.png")
+        self.time_text = AppObjects.Text(size=280, font="resources/fonts/TitilliumWeb-Regular.ttf", color=(230,230,230))
+        self.runner_text = AppObjects.Text(size=120, font="resources/fonts/data-latin.ttf", color=(245,245,245))
 
         """
         Estados:
@@ -24,21 +24,23 @@ class Chronometer(Scene):
         """
         self.state = "Aux"
         self.chronometer = AppObjects.Chronometer()
-
-        manager.globals["time_mark"] = 0.0
+        self.manager.globals["equipo_actual"] = None
+        manager.globals["time_mark"] = (0.0, "")
 
     def on_update(self):
         "Actualizacion logica que se llama automaticamente desde el director."
         format_time = self.chronometer.get_format_time()
-        self.time_text.set_text(format_time)
+        self.time_text.set_text(format_time, color=(230,230,230))
 
 
     def validator(self, text):
-        equipo_dict, err = self.manager.DB.get_tiempo_by_member(text)
+        equipo_actual, err = self.manager.DB.get_tiempo_by_member(text)
         if err is None:
-            equipo_nombre = equipo_dict["nombre"]
+            self.manager.globals["equipo_actual"] = equipo_actual
+            equipo_nombre = equipo_actual["nombre"]
             return equipo_nombre, True
         else:
+            self.manager.globals["equipo_actual"] = None
             return "", False
 
     def on_event(self, inputs_handler):
@@ -48,7 +50,7 @@ class Chronometer(Scene):
             if self.manager.globals["verbose"]:
                 print("\tReading state")
             if self.manager.DB is not None:
-                self.runner_text.set_text("Ingresar equipo:")
+                self.runner_text.set_text("Equipo", color=(245,245,245))
             else:
                 self.runner_text.set_text("")
 
@@ -61,13 +63,12 @@ class Chronometer(Scene):
                 text, valid = "", True
 
             if valid:
-                self.runner_text.set_text(text)
+                self.runner_text.set_text(text, color=(245,245,245))
                 print("\tValid input %s" % text)
-                print("\tStandBy state")
                 self.state = "StandBy"
             else:
                 print("\tInvalid input")
-                self.runner_text.set_text("No encontrado: " + text)
+                self.runner_text.set_text("No encontrado: " + text, color=(245,245,245))
                 self.state = "Aux"
 
         elif self.state == "StandBy":
@@ -86,13 +87,11 @@ class Chronometer(Scene):
                 self.chronometer.reset()
 
             elif inputs_handler.is_up("start"):
-                print(inputs_handler.previos, inputs_handler.actual)
                 self.state = "Finish"
                 self.chronometer.stop()
 
         else: #state finish
             self.manager.change_scene(scene_id="Results", remove=False)
-            self.manager.globals["runner"] = self.runner_text.text
             self.manager.globals["time_mark"] = (self.chronometer.get_time(), self.chronometer.get_format_time())
             self.state = "StandBy"
 
@@ -104,8 +103,8 @@ class Chronometer(Scene):
 
         #TODO Agregar dibujo del cronometro
         #self.chronometer.draw(screen, 200, 300)
-        self.runner_text.render(screen, x=400, y=100)
+        self.runner_text.render(screen, y=380, centerx=(True, 1920))
 
         # Tiempo
         #TODO ajustar a nuevo fondo
-        self.time_text.render(screen, x=300, y=550)
+        self.time_text.render(screen, y=500, centerx=(True, 1920))

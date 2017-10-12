@@ -25,6 +25,11 @@ class Text:
 
         self.text = text
 
-    def render(self, screen, x=0, y=0):
+    def render(self, screen, x=0, y=0, centerx=(False,0), centery=(False,0)):
+        size = self.font.size(self.text)
+        if centerx[0]:
+            x = centerx[1]//2 - size[0]//2
+        if centery[0]:
+            y  = centery[1]//2 - size[1]//2
         text = self.font.render(self.text, 1, self.color)
         screen.blit(text, (x, y))
