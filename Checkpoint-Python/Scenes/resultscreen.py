@@ -11,7 +11,7 @@ class ResultScreen(Scene):
     def __init__(self, manager, scene_id):
         super().__init__(manager, scene_id)
         #TODO Cambiar imagen de fondo
-        self.background = load_image("resources/images/background1.jpg")
+        self.background = load_image("resources/images/background.png")
 
         #TODO cambiar fuente
         self.time_text = AppObjects.Text(size=60)
@@ -28,8 +28,8 @@ class ResultScreen(Scene):
         if inputs_handler.on_press("reset"):
             self.manager.change_scene(scene_id="Chrono", remove=False)
 
-        if inputs_handler.on_press("exit"):
-            self.manager.stop_running()
+        #if inputs_handler.on_press("exit"):
+            #self.manager.stop_running()
 
     def on_draw(self, screen):
         "Se llama cuando se quiere dibujar la pantalla."

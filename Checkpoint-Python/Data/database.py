@@ -19,14 +19,15 @@ class DataBase:
                 self._tiempos[row["id_equipo"]] = dict(nombre=row["nombre"], i1=row["i1"], i2=row["i2"],
                                                       i3=row["i3"], final=row["final"])
 
-        self.mostrar()
-
     def get_tiempo_by_member(self, rut):
         try:
-            tiempo = self._tiempos[self._equipos[rut]["id_equipo"]]
+            participante = self._equipos[rut]
+            id_eqi = participante["id_equipo"]
+            tiempo = self._tiempos[id_eqi]
+            #tiempo = self._tiempos[self._equipos[rut]["id_equipo"]]
             err = None
         except KeyError:
-            tiempo, err = "", None
+            tiempo, err = None, KeyError
         return tiempo, err
 
 

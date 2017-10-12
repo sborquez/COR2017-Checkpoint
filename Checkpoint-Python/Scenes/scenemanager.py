@@ -15,7 +15,8 @@ class SceneManager:
 
     pygame.init()
 
-    def __init__(self, title: str, width: int, height: int, input_handler: object, database: object, fullscreen: bool = False):
+    def __init__(self, title: str, width: int, height: int, input_handler: object,
+                    database: object, fullscreen: bool = False, verbose: bool = False):
         # Crear una nueva ventana
         flags = pygame.RESIZABLE
         if fullscreen:
@@ -41,12 +42,15 @@ class SceneManager:
 
         # Conectar con la Base de Datos
         self.DB = database
+        if database is not None and verbose:
+            self.DB.mostrar()
 
         # Variables globales entre escenas
         self.globals = {
              "width": width,
             "heigth": height,
-             "title": title
+             "title": title,
+             "verbose": verbose
         }
 
     def run(self):

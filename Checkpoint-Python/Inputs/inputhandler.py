@@ -29,4 +29,5 @@ class InputHandler:
     def text_input(self, validate=lambda s: (s, True), show=""):
         """Espera a una entrada de texto, retorna el input y si es valido. """
         text = ask(show)
+        print("\t\tinput: %s" % text)
         return tuple(validate(text))

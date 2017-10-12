@@ -1,10 +1,90 @@
 id,nombre,equipo,id_equipo
-1,seba,asd,10
-2,juan,asd,10
-3,pato,asd,10
-4,nacho,xxx,20
-5,consu,xxx,20
-6,pato,xxx,20
-7,cari,fgh,30
-8,vale,fgh,30
-9,beno,fgh,30
+199111183,Ionel Alejandro Pop Jara,Three Laws,1
+209636115,Pablo Salamanca Lopez,Trackino,2
+206655194,Felipe Benjamin Quinones Fuentes,Trackino,2
+190443728,Felipe Ignacio Soto Torres,GTF Robot,3
+178824171,Fabian Alberto Diaz Puga,GTF Robot,3
+171667801,Victor Manuel Olea Ortiz,GTF Robot,3
+185734005,Daniel Andres Faundez Correa,GTF Robot,3
+202537561,Sebastian Ignacio Alfonso Kast-Lend Jaramillo,Industrial Fenner,4
+206421479,Hardy Miguel Brana Melendez,Industrial Fenner,4
+201119095,Joaquin Anibal Marin Tardon,master machine,5
+209988070,Felipe Andres  Reyes Gonzalezmaster machine,5
+203852746,Fernando Javier Fuentes Palma,Transformers,6
+210152164,Jose Ignacio Jerez Quijada,Transformers,6
+186477715,Felipe Alexis Fredes Polanco,CRU,7
+184965984,José Ignacio Ríos Sánchez,CRU,7
+188626335,Francisco Antonio  Salazar Candia,CRU,7
+181148039,Claudio Antonio Castro Vasquez,CRU,7
+185386031,Cristóbal Andres Jiménez Howard,Fabfast,8
+17120979,Juan Carlos Tapia Rojo,Fabfast,8
+174124027,Felipe Andrés Pérez Alvarado,Jaguerbot,9
+196378820,Farid Ignacio Elfar Guajardo,Dubot runner,10
+186190882,Gabriel Esteban Estivill Araya,Alto Delay,11
+19331354K,Javier Ignacio Urrutia Rebello,Scuderia Robotic,12
+19331354k,Javier Ignacio Urrutia Rebello,Scuderia Robotic,12
+196321462,Héctor Alonso Garcés Harbst,ICARO 3,13
+213171488,Brenda Antonia Vivanco Henríquez,Titanfall.A2,14
+20904739K,Guillermo Enrique González Arévalo,GBD,15
+20904739k,Guillermo Enrique González Arévalo,GBD,15
+210685006,Ivana Antonella Vallejos Menares,The Kingdom,16
+20975035K,Paula Belén Bernal Hormazábal,Microbots,17
+20975035k,Paula Belén Bernal Hormazábal,Microbots,17
+210027246,Jesús Antonio Menares Fuentes,SLIPKNOT,18
+186613015,Simón Andrés Rodríguez Contreras,Icaro 1,19
+188103456,Benjamín Andrés Lobos González,RoboHunters,20
+182257222,Luis alfonso toloza albornoz,Los super poxicos,21
+190899993,Marcos Alejandro Andrés Pérez Toledo,Mr Rapidin,22
+189286538,Flavio Ignacio Norambuena Cancino,G4,23
+197452420,matias andres fredes garcia,TYR ROBOTICS,24
+192681804,Vincent Andre Depassier Casanova,TIR,25
+179613883,Cristian Ignacio Valdivia Ramírez,Team Tesla,26
+AQ 401256,Nicolas Geovanny Niño Niño,CON-CIENCIA-COL,27
+AS 650340,Juan Esteban Bastidas Escobar,CON-CIENCIA-COL2,28
+215650081,Francesco Crivelli González,Lightracers,29
+196241485,Francisco José Pessot Marambio,ICARO 3,13
+170541294,evelyn  gonzalez,Jaguerbot,9
+169795274,Rodrigo Alonso Fuentes Carozzi,Dubot runner,10
+198780146,Ashley Mebahel Raziel Jara Goicovich,Alto Delay,11
+190089134,Juan Pablo Cáceres Briones,Scuderia Robotic,12
+203604181,Oscar Ignacio Guajardo Roco,Titanfall.A2,14
+203484895,Miguel Isaac Contreras Morales,GBD,15
+210289437,Matías Esteban Quiroz Rivadeneira,The Kingdom,16
+20914946K,Marcela Nayadett González González,Microbots,17
+20914946k,Marcela Nayadett González González,Microbots,17
+208335073,Ignacio Isaias San Martín Pradenas,SLIPKNOT,18
+198140945,Marcelo Ignacio Cea Mardones,RoboHunters,20
+182822167,jesus fernando moraga bravo,Los super poxicos,21
+188578020,Rodrigo Alberto Contreras Merino,Mr Rapidin,22
+190744396,Leonel Ignacio Muñoz Vergara,G4,23
+200207556,Rafael Esteban Cruz González,TYR ROBOTICS,24
+194903812,Enrique Jose Carvallo Rioseco,TIR,25
+178114921,Macarena Estrella Tamayo Segura,Team Tesla,26
+183316214,Juan Manuel Corrales Faunes,Jaguerbot,9
+201282713,Marco Ignacio Reyes Cayuqueo,Dubot runner,10
+197003618,Ignacio Oliver Hoces,Alto Delay,11
+196052992,José Miguel Enrique Camus Rojas,Scuderia Robotic,12
+196374116,Tomás Ignacio  Bravo González,ICARO 3,13
+211322551,Lorenzo Esteban Gaete Gonzalez,Titanfall.A2,14
+206574275,Belén Monserratt Valenzuela Cifuentes,GBD,15
+211282053,Constanza Camila Quilahuilque Salazar,The Kingdom,16
+206568976,Javier Esteban Valenzuela Meza,Microbots,17
+209837579,Maximiliano Andrés Chamorro Portilla,SLIPKNOT,18
+199405870,Marcelo Alejandro Juan Alberto Muñoz Villarroel,RoboHunters,20
+192998476,sebastian ignacio gonzalez calquin,Los super poxicos,21
+191060644,Zoraya Olivia González Ayala,Mr Rapidin,22
+192944430,Pablo Alfonso Concha Vega,G4,23
+193702090,Bayron camilo monje Franco,TYR ROBOTICS,24
+193384048,Bryan Mauricio  Faundez Aguilera,TIR,25
+180080236,Agustín Gabriel Montero López,Team Tesla,26
+198392499,Jaime Eduardo San Martin Angulo,Alto Delay,11
+209178923,Matias Eduardo Maillard Gutiérrez,GBD,15
+203593481,Jean Franco Contreras Paniagua,Microbots,17
+209066890,Eros Angel Luis Raggi Sosa,SLIPKNOT,18
+198157368,Martín Ignacio Stockle Cornejo,RoboHunters,20
+198654590,matias alfredo pinto leiva,Los super poxicos,21
+188876145,Alfredo Roberto Delgado Cárdenas,Mr Rapidin,22
+188563406,Victor Esteban Becerra Ramírez,G4,23
+196965564,Javier Marcelo Soto Gonzalez,TYR ROBOTICS,24
+17801031K,Enzo Matias Galecio Díaz,Team Tesla,26
+17801031k,Enzo Matias Galecio Díaz,Team Tesla,26

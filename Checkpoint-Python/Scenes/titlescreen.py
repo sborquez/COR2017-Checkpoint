@@ -9,7 +9,7 @@ class TitleScreen(Scene):
 
     def __init__(self, manager, scene_id):
         super().__init__(manager, scene_id)
-        self.background = load_image("resources/images/background1.jpg")
+        self.background = load_image("resources/images/background.png")
 
         manager.load_scene(Scene=Chronometer(manager, "Chrono"), scene_id="Chrono")
         manager.load_scene(Scene=ResultScreen(manager, "Results"), scene_id="Results")
@@ -21,6 +21,7 @@ class TitleScreen(Scene):
     def on_event(self, inputs_handler):
         "Se llama cuando llega un evento especifico al bucle."
         if inputs_handler.on_press("reset"):
+            print("Chronometer Scene")
             self.manager.change_scene(scene_id="Chrono", remove=True)
 
     def on_draw(self, screen):

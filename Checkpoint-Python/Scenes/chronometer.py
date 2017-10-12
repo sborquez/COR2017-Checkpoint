@@ -10,8 +10,7 @@ class Chronometer(Scene):
     def __init__(self, manager, scene_id):
         super().__init__(manager, scene_id)
 
-        #TODO cambiar fondo
-        self.background = load_image("resources/images/background2.jpg")
+        self.background = load_image("resources/images/background.png")
         self.time_text = AppObjects.Text(size=100)
         self.runner_text = AppObjects.Text(size=60)
 
@@ -38,31 +37,36 @@ class Chronometer(Scene):
         equipo_dict, err = self.manager.DB.get_tiempo_by_member(text)
         if err is None:
             equipo_nombre = equipo_dict["nombre"]
-            print(equipo_nombre)
             return equipo_nombre, True
         else:
-            print(err)
             return "", False
 
     def on_event(self, inputs_handler):
         "Se llama cuando llega un evento especifico al bucle."
         if self.state == "Aux":
             self.state = "Reading"
-            self.runner_text.set_text("Ingresar equipo:")
+            if self.manager.globals["verbose"]:
+                print("\tReading state")
+            if self.manager.DB is not None:
+                self.runner_text.set_text("Ingresar equipo:")
+            else:
+                self.runner_text.set_text("")
 
         elif self.state == "Reading":
-            #text, validate = inputs_handler.text_input(show="Input: ", validate=self.validator)
-            text = input("rut: ")
+            if self.manager.DB is not None:
+                print("\tEsperando input",end=" ")
+                text, valid = inputs_handler.text_input(show="", validate=self.validator)
+                print(text)
+            else:
+                text, valid = "", True
 
-            text, validate = self.validator(text)
-
-
-
-            if validate:
-                #TODO  buscar en la BD
+            if valid:
                 self.runner_text.set_text(text)
+                print("\tValid input %s" % text)
+                print("\tStandBy state")
                 self.state = "StandBy"
             else:
+                print("\tInvalid input")
                 self.runner_text.set_text("No encontrado: " + text)
                 self.state = "Aux"
 
@@ -105,4 +109,3 @@ class Chronometer(Scene):
         # Tiempo
         #TODO ajustar a nuevo fondo
         self.time_text.render(screen, x=300, y=550)
-

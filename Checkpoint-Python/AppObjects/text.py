@@ -4,11 +4,11 @@ pygame.font.init()
 
 
 class Text:
-    def __init__(self, font="resources/fonts/PressStart2P.ttf", size=10):
+    def __init__(self, font="resources/fonts/PressStart2P.ttf", size=10, color=(255, 255, 255)):
         self.text = ""
         self.size = size
         self._font = font
-        self.color = (255, 255, 255)
+        self.color = color
         self.font = pygame.font.Font(font, self.size)
 
     def set_text(self, text, size=-1, color=(255, 255, 255), bold=False, italic=False, underline=False):
