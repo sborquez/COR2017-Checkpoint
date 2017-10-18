@@ -1,3 +1,8 @@
+#!/bin/python3
+import os
+os.chdir("/home/pi/COR2017-Checkpoint/Checkpoint-Python")
+
+
 from Scenes import *
 from Data import *
 import Inputs

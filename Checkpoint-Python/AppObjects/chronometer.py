@@ -29,6 +29,11 @@ class Chronometer:
             return time() - self.init_time
         return self.mark_time
 
+    def formater(self, seconds):
+        mili = str(seconds % 1)[2:5]
+        mili = "000" if mili == "0" else mili
+        return strftime("%M:%S:", gmtime(seconds)) + mili
+
     def get_format_time(self):
         seconds = self.get_time()
         mili = str(seconds % 1)[2:5]
